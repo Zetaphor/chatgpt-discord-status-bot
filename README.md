@@ -1,5 +1,7 @@
 # Discord Webpage Monitor Bot
 
+## This has a fatal flaw, the Cloudflare DDOS protection doesn't allow the script through to examine the page :(
+
 ### **The code and README for this project were 100% written by ChatGPT**
 
 This is a Discord bot that checks the status of the ChatGPT website. If the site is down it will send a message to a specific channel. If the site comes back up, it will send another message to the channel.

@@ -6,23 +6,27 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
+intents = discord.Intents.default()
+intents.guild_messages = True
+
 # Initialize the Discord client
-client = discord.Client()
+client = discord.Client(intents=intents)
 
 # URL of the webpage to check
-url = "https://chat.openai.com/chat"
+url = "https://chat.openai.com"
 
 # String to search for
 string_to_search = "ChatGPT is at capacity right now"
 
 # ID of the channel to send messages to
-channel_id = "1234567890"
+channel_id = 471339477248507907
 
 # Variable to keep track of whether the string was previously found
 string_previously_found = False
 
 @client.event
 async def on_ready():
+    await client.wait_until_ready()
     print("Bot is ready.")
 
     # Check the webpage every 30 seconds
